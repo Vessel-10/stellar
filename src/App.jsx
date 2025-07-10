@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import siteLogo from "../public/cruise.png" 
 import Nav from './component/nav.jsx';
 import Intro from './component/intro';
 import FirstSection from './component/first-section';
