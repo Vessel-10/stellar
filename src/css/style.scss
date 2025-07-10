@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@mixin buttons($border-raduis:"20px"){
+    width: 140px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: $border-raduis;
+    font-size: 1.2rem;
+}
+@mixin icons(
+    $width:"100px",
+    $height:"100px",
+    $boder:"1px solid black",
+    $padding:"50px",
+    $border-radius:"50%"
+){
+    width: $width;
+    height: $height;
+    align-self: center;
+    border: $boder;
+    padding: $padding;
+    border-radius: $border-radius;
+}
+.nav{
+    position: sticky;
+    top: 0;
+    background-color: rgba(139, 124, 124, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10;
+    .container{
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 0;
+            li{
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: lighter;
+                    text-transform: uppercase;
+                    &:hover{
+                        transition: 2s ease-in;
+                        color: black;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}
+.intro{
+    .container{
+        background-color: beige;
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .img{
+            flex: 1;
+            order: 2;
+            img{
+                display: block;
+                margin: auto;
+                width: 400px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 1px solid black;
+                padding: 20px;
+            }   
+        }
+        .content-box{
+            order: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            h1{
+                font-size: 3rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-weight: lighter;
+                font-style: normal;
+                font-optical-sizing: none;
+            }
+            p{
+                font-size: 1rem;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                font-style: normal;
+                font-optical-sizing: none;
+            }
+            button{
+                @include buttons(20px);
+            }
+        }
+    }
+}
+
+.first-section{
+    margin: 50px 0;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        h1{
+            text-align: center;
+            font-size: 5rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 100;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        .content-box{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+            .box{
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                .icons{
+                    @include icons(100px,100px,1px solid black,50px, 50%);
+                }
+                h3{
+                    font-size: 2rem;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: lighter;
+                    font-style: normal;
+                }
+                p{
+                    font-size: 1.2rem;
+                } 
+            }
+        }
+        button{
+            @include buttons(0px)
+        }
+    }
+}
+.second-section{
+    margin: 50px 0;
+    .container{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        h1{
+            font-size: 3rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+        }
+        p:nth-child(2){
+            width: 70%;
+            font-size: 1.8rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+            font-style: normal;
+        }
+        p:nth-child(4){
+            font-size: 1.2rem;
+            columns: 2;
+            text-align: left;
+        }
+        button{
+            @include buttons(0);
+        }
+        .content-box{
+            display: flex;
+            width: 100%;
+            .box{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                .icons{
+                    @include icons(50px , 50px)
+                }
+                h3{
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: lighter;
+                    letter-spacing: 5px;
+                }
+                &:nth-child(1){
+                    background-color: #E28024;
+                }
+                &:nth-child(2){
+                    background-color: #4e5fc2;
+                }
+                &:nth-child(3){
+                    background-color: #461f47;
+                }
+                &:nth-child(4){
+                    background-color: #3b928e;
+                }
+                &:nth-child(5){
+                    background-color: #04A8EE;
+                }
+            }
+        }
+    }
+}
